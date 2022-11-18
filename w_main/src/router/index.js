@@ -3,7 +3,7 @@ import MainLayout from '../views/MainLayout'
 
 const routes = [
   {
-    path: '/',
+    path: '/main',
     name: 'MainLayout',
     component: MainLayout
   },

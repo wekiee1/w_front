@@ -1,10 +1,18 @@
 import { createApp } from 'vue'
 import router from './router'
 import App from './App.vue'
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import { registerMicroApps, start } from 'qiankun';
 
 let app = createApp(App)
 app.use(router)
+app.use(ElementPlus, { size: 'small' })
+// 全局引入el-icon
+for (const iconName in ElementPlusIconsVue) {
+  app.component(iconName, ElementPlusIconsVue[iconName])
+}
 app.mount('#app');
 
 // 注册微应用
