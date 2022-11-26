@@ -5,13 +5,14 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import { registerMicroApps, start } from 'qiankun';
+import '@/assets/global.css'
 
 let app = createApp(App)
 app.use(router)
 app.use(ElementPlus, { size: 'small' })
 // 全局引入el-icon
-for (const iconName in ElementPlusIconsVue) {
-  app.component(iconName, ElementPlusIconsVue[iconName])
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, component)
 }
 app.mount('#app');
 
