@@ -3,7 +3,9 @@
     <el-header>
       <micro-app-bars />
     </el-header>
-    <el-main><develop-plan /></el-main>
+    <el-main id="microAppContainer">
+      <router-view />
+    </el-main>
   </el-container>
 </template>
 

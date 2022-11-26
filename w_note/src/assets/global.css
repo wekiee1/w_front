@@ -4,7 +4,7 @@
 
 html,
 body,
-#app ,[id^=__qiankun_microapp_wrapper_for]{
+#app,div #app:parent {
   width: 100%;
   height: 100%;
 }
@@ -12,6 +12,10 @@ body,
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+#microAppContainer:first-child {
+  width: 100%;
+  height: 100%;
 }
 
 .logo{
