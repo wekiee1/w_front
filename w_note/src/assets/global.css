@@ -1,24 +1,27 @@
-:root{
-  --test_color:rgb(201, 137, 137);
+:root {
+  --test_color: rgb(201, 137, 137);
 }
 
-html,
-body,
-#app,div #app:parent {
-  width: 100%;
-  height: 100%;
-}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
+html,
+body,
+#app,
+div #app:parent {
+  width: 100%;
+  height: 100%;
+}
+
 #microAppContainer:first-child {
   width: 100%;
   height: 100%;
 }
 
-.logo{
+.logo {
   height: 36px;
   width: 36px;
 }
@@ -27,21 +30,27 @@ body,
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-thumb {
   background-color: #0003;
   border-radius: 10px;
   transition: all .2s ease-in-out;
 }
+
 ::-webkit-scrollbar-track {
   border-radius: 10px;
 }
 
 /* 动画过渡 */
-.base_transition{
-  transition:all .3s;
+.base_transition {
+  transition: all .3s;
 }
 
-.full{
+.full {
   width: 100%;
   height: 100%;
+}
+
+.clearPadding {
+  padding: 0;
 }

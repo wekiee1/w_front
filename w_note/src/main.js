@@ -7,7 +7,7 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import routes from './router'
 import store from './store'
 import './public-path';
-import '@/assets/global.css'
+import './assets/global.css'
 
 let app = null;
 let router = null;

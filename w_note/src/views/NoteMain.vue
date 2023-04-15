@@ -1,7 +1,7 @@
 <template>
   <el-container class="full">
     <el-aside class="left-border" width="300px"><note-list /></el-aside>
-    <el-main><note-editor /> </el-main>
+    <el-main class="clearPadding"><note-editor /> </el-main>
   </el-container>
 </template>
 
@@ -22,6 +22,7 @@ export default {
 
 <style scoped>
 .left-border {
+  padding: 10px;
   border-right: solid 2px var(--el-menu-border-color);
 }
 </style>
