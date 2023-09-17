@@ -1,12 +1,13 @@
 const packageName = require('./package.json').name;
 
+
 module.exports = {
 
   // publicPath: baseUrl,
   devServer: {
     // 指定项目启动时的默认端口号
-    port: 8081,
-    open: true,
+    port: 8083,
+    open: false,
     headers: {
       'Access-Control-Allow-Origin': '*',
     },

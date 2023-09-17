@@ -1,27 +1,24 @@
 <template>
-  <div id="app">
-    <router-view />
-  </div>
+  <el-container direction="vertical" style="height: 100%">
+    <el-header>
+      <micro-app-bars />
+    </el-header>
+    <el-main id="microAppContainer">
+      <router-view v-slot="{ Component }">
+        <transition name="fade">
+          <component :is="Component" />
+        </transition>
+      </router-view>
+    </el-main>
+  </el-container>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import MicroAppBars from "./views/MicroAppBars.vue";
 export default {
+  components: { MicroAppBars },
   name: "App",
-  components: {
-    HelloWorld,
-  },
 };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
