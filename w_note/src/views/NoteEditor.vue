@@ -1,7 +1,11 @@
 <template>
   <div id="editor">
-    <mavon-editor style="height: 100%" v-model="noteText" @save="saveDialogVisible = true" />
-    <save-note-dialog :dialogVisible.sync="saveDialogVisible" />
+    <mavon-editor
+      style="height: 100%"
+      v-model="noteText"
+      @save="() => (saveDialogVisible = true)"
+    />
+    <save-note-dialog v-model:dialogVisible="saveDialogVisible" />
   </div>
 </template>
 

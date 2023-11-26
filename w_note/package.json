@@ -7,10 +7,11 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.1.0",
     "core-js": "^3.6.5",
     "element-plus": "2.2.22",
     "mavon-editor": "^3.0.0-beta",
-    "vue": "^3.0.0",
+    "vue": "^3.3.9",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
   },

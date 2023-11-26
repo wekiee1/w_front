@@ -12,12 +12,12 @@ import './assets/global.css'
 let app = null;
 let router = null;
 
-function render(props = {}) {
+function render(props = {}, isMicro = false) {
   console.log('render: w_server');
   const { container } = props;
 
   router = createRouter({
-    history: createWebHistory(process.env.VUE_APP_SYSTEM_BASE_URL),
+    history: createWebHistory(isMicro ? process.env.VUE_APP_SYSTEM_BASE_URL : '/'),
     mode: 'history',
     routes
   })
