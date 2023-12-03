@@ -7,7 +7,8 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import routes from './router'
 import store from './store'
 import './public-path';
-import './assets/global.css'
+import './assets/global.css';
+import api from '@/assets/api';
 
 let app = null;
 let router = null;
@@ -31,6 +32,9 @@ function render(props = {}, isMicro = false) {
   for (const iconName in ElementPlusIconsVue) {
     app.component(iconName, ElementPlusIconsVue[iconName])
   }
+
+  // 全局接口注册
+  app.config.globalProperties.$api = api;
 
   app.mount(container ? container.querySelector('#app') : '#app');
 

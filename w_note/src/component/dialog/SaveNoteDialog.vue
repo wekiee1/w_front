@@ -1,5 +1,7 @@
 <script setup>
-import { ref, defineEmits, watch, reactive, computed } from "vue";
+import { ref, defineEmits, watch, getCurrentInstance, computed } from "vue";
+
+const $api = getCurrentInstance().proxy.$api;
 
 const props = defineProps({
   dialogVisible: {
@@ -23,6 +25,7 @@ const parentId = ref("");
 
 const confirm = () => {
   console.log("save!");
+  $api.noteApi.saveNoteContent()
 };
 const handleClose = () => {
   console.log("handleClose");
@@ -33,7 +36,12 @@ const handleClose = () => {
 <style scoped></style>
 
 <template>
-  <el-dialog title="保存笔记" v-model="visible" width="30vw" @close="handleClose">
+  <el-dialog
+    title="保存笔记"
+    v-model="visible"
+    width="30vw"
+    @close="handleClose"
+  >
     <el-form label-width="60px" label-position="left">
       <el-col :span="20">
         <el-form-item label="标题">
@@ -49,9 +57,9 @@ const handleClose = () => {
 
     <template #footer>
       <span class="dialog-footer">
-        <el-button @click="visible = false">取消</el-button>
+        <el-button icon="close" @click="visible = false">取消</el-button>
         <el-button icon="RefreshLeft">重置</el-button>
-        <el-button type="primary" @click="confirm">保存</el-button>
+        <el-button type="primary" icon="Collection" @click="confirm">保存</el-button>
       </span>
     </template>
   </el-dialog>

@@ -3,22 +3,22 @@ const packageName = require('./package.json').name;
 // const basicUrl = window.__POWERED_BY_QIANKUN__ ? "/" : "/note";
 module.exports = {
 
-  publicPath: 'http://192.168.199.225:8084/',
+  publicPath: '/',
   outputDir: 'dist',
   devServer: {
     // 指定项目启动时的默认端口号
     port: 8084,
     open: false,
     headers: {
-      'Access-Control-Allow-Origin': '*',
+      "Access-Control-Allow-Origin": '*',
     },
     proxy: {
-      "^/api": {
-        target: "http://localhost:8084",
+      "/note": {
+        target: "http://localhost:8081",
         changeOrigin: true,
-        pathRewrite: {
-          "^/api": ""
-        }
+        // pathRewrite: {
+        //   "^/note": ""
+        // }
       }
     },
   },
