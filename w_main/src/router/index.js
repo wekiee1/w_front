@@ -1,11 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import MainLayout from '../views/MainLayout'
+import DevelopPlan from '../views/DevelopPlan'
+// const DevelopPlan = () => import('../views/DevelopPlan')
 
 const routes = [
   {
-    path: '/main',
-    name: 'MainLayout',
-    component: MainLayout
+    path: '/',
+    redirect: "/w/plan"
+  },
+  {
+    path: '/w/plan',
+    component: DevelopPlan,
   },
 ]
 

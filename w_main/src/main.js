@@ -5,13 +5,14 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import { registerMicroApps, start } from 'qiankun';
+import '@/assets/global.css'
 
 let app = createApp(App)
 app.use(router)
 app.use(ElementPlus, { size: 'small' })
 // 全局引入el-icon
-for (const iconName in ElementPlusIconsVue) {
-  app.component(iconName, ElementPlusIconsVue[iconName])
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, component)
 }
 app.mount('#app');
 
@@ -20,14 +21,20 @@ const microApps = [
   {
     name: 'vue-component',
     entry: 'http://localhost:8082',
-    container: '#app',
-    activeRule: '/component',
+    container: '#microAppContainer',
+    activeRule: '/w/component',
   },
   {
     name: 'vue server', // app name registered
     entry: 'http://localhost:8083',
-    container: '#app',
-    activeRule: '/server',
+    container: '#microAppContainer',
+    activeRule: '/w/server',
+  },
+  {
+    name: 'vue-note',
+    entry: 'http://localhost:8084',
+    container: '#microAppContainer',
+    activeRule: '/w/note',
   },
 ];
 

@@ -1,5 +1,5 @@
 {
-  "name": "w_server",
+  "name": "w_note",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,9 +7,11 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "@element-plus/icons-vue": "^2.0.6",
+    "@element-plus/icons-vue": "^2.1.0",
+    "axios": "^1.6.2",
     "core-js": "^3.6.5",
-    "element-plus": "^2.2.12",
+    "element-plus": "2.2.22",
+    "mavon-editor": "^3.0.0-beta",
     "vue": "^3.3.9",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
@@ -19,7 +21,8 @@
     "@vue/cli-plugin-router": "~4.5.13",
     "@vue/cli-plugin-vuex": "~4.5.13",
     "@vue/cli-service": "~4.5.13",
-    "@vue/compiler-sfc": "^3.0.0"
+    "@vue/compiler-sfc": "^3.0.0",
+    "webpack": "^5.75.0"
   },
   "browserslist": [
     "> 1%",

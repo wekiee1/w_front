@@ -7,16 +7,18 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import routes from './router'
 import store from './store'
 import './public-path';
+import './assets/global.css';
+import api from '@/assets/api';
 
 let app = null;
 let router = null;
 
-function render(props = {}) {
+function render(props = {}, isMicro = false) {
   console.log('render: w_server');
   const { container } = props;
 
   router = createRouter({
-    history: createWebHistory(process.env.VUE_APP_SYSTEM_BASE_URL),
+    history: createWebHistory(isMicro ? process.env.VUE_APP_SYSTEM_BASE_URL : '/'),
     mode: 'history',
     routes
   })
@@ -30,6 +32,9 @@ function render(props = {}) {
   for (const iconName in ElementPlusIconsVue) {
     app.component(iconName, ElementPlusIconsVue[iconName])
   }
+
+  // 全局接口注册
+  app.config.globalProperties.$api = api;
 
   app.mount(container ? container.querySelector('#app') : '#app');
 
